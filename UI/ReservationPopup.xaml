@@ -1,0 +1,39 @@
+﻿<Window x:Class="WaveWpf.UI.ReservationPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WaveWpf.UI"
+        mc:Ignorable="d"
+        Title="Wave - Reservation" Height="420" Width="800">
+    <Grid>
+        <Grid Background="#FF3E4A67" Height="420" Margin="0,0,0,0">
+            <Label Content="Réservation" HorizontalAlignment="Left" Height="58" Margin="86,43,0,0" VerticalAlignment="Top" Width="345" RenderTransformOrigin="0.507,0.645" FontFamily="Comic Sans MS" FontSize="35" Foreground="#FFAEC5E4"/>
+            <Grid Margin="86,142,85,62">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="119*"/>
+                    <ColumnDefinition Width="12*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Content="Nom" Margin="0,0,0,30" Grid.RowSpan="2" FontFamily="Comic Sans MS" FontSize="16" Foreground="#FFAEC5E4"/>
+                <TextBox Name="txt_nom" Grid.Column="2" Margin="41,1,51,29" Grid.RowSpan="2" FontFamily="Comic Sans MS" FontSize="16" VerticalContentAlignment="Center"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Prénom" FontFamily="Comic Sans MS" FontSize="16" Grid.ColumnSpan="3" Margin="0,31,440,39" Grid.RowSpan="3" Foreground="#FFAEC5E4"/>
+                <TextBox Name="txt_prenom" Grid.Row="1" Grid.Column="2" Margin="41,31,51,39" Grid.RowSpan="3" FontFamily="Comic Sans MS" FontSize="16" VerticalContentAlignment="Center"/>
+                <Button Name="btn_reservation" Grid.Row="4" Grid.Column="2" Content="Valider" Margin="116,56,134,-66" FontFamily="Comic Sans MS" FontSize="16" Background="#FF73B7F5" Foreground="White" Click="btn_reservation_Click"/>
+                <Label Grid.Row="3" Grid.Column="0" Content="N° Téléphone" FontFamily="Comic Sans MS" FontSize="16" Grid.ColumnSpan="3" Margin="0,25,440,5" Grid.RowSpan="2" Foreground="#FFAEC5E4"/>
+                <TextBox Name="txt_phone" Grid.Row="3" Grid.Column="2" Margin="41,25,51,5" Grid.RowSpan="2" FontFamily="Comic Sans MS" FontSize="16"  VerticalContentAlignment="Center"/>
+            </Grid>
+            <Image Source="/logo_wave-removebg-preview.png" Margin="602,182,6,182"/>
+            <Label Name="ConcertNameLabel" Content="Label" HorizontalAlignment="Left" Height="65" Margin="316,54,0,0" VerticalAlignment="Top" Width="336" FontFamily="Comic Sans MS" FontSize="18" Foreground="#FFAEC5E4"/>
+            <Label Name="ConcertIdLabel" Content="Label" HorizontalAlignment="Left" Height="28" Margin="73,10,0,0" VerticalAlignment="Top" Width="41" Visibility="Hidden"/>
+        </Grid>
+    </Grid>
+</Window>

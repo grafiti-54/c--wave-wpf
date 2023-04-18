@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WaveWpf.UI.OeuvreAdminDashboardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WaveWpf.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FF3E4A67" Height="420" Width="785">
+        <Label Content="Gestion des oeuvres" HorizontalContentAlignment="Center" Height="58" FontFamily="Comic Sans MS" FontSize="35" Foreground="#FFAEC5E4" Margin="10,2,-10,360"/>
+        <TextBox HorizontalAlignment="Left" Height="28" Margin="549,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" FontFamily="Comic Sans MS" FontSize="14" TextChanged="SearchOeuvreAdmin"/>
+        <Label Grid.Column="0" Content="Rechercher" FontFamily="Comic Sans MS" FontSize="16" Margin="433,198,224,189" Foreground="#FFAEC5E4"/>
+        <TextBox x:Name="txt_title_oeuvre" HorizontalAlignment="Left" Height="21" Margin="37,104,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="246" FontFamily="Comic Sans MS"/>
+        <Label Grid.Column="0" Content="Titre de l'oeuvre" FontFamily="Comic Sans MS" FontSize="12" Margin="34,75,546,312" Foreground="#FFAEC5E4"/>
+        <TextBox x:Name="txt_duree_oeuvre" HorizontalAlignment="Center" Height="21" Margin="0,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="133" />
+        <Label Grid.Column="0" Content="Durée" FontFamily="Comic Sans MS" FontSize="12" Margin="324,76,256,311" Foreground="#FFAEC5E4"/>
+        <Label Grid.Column="0" Content="Groupe" FontFamily="Comic Sans MS" FontSize="12" Margin="504,76,76,311" Foreground="#FFAEC5E4"/>
+        <Button x:Name="add_oeuvre_admin_btn" Content="Ajouter" HorizontalAlignment="Left" Margin="38,152,0,0" VerticalAlignment="Top" Width="70" Background="#FF6BBFFF" FontFamily="Comic Sans MS" FontSize="14" Click="add_oeuvre_admin_btn_Click"/>
+        <Button x:Name="update_oeuvre_admin_btn" Content="Modifier" HorizontalAlignment="Left" Margin="119,152,0,0" VerticalAlignment="Top" Width="79" Background="#FFBAFF6B" FontFamily="Comic Sans MS" FontSize="14" Click="update_oeuvre_admin_btn_Click"/>
+        <Button x:Name="delete_delete_admin_btn" Content="Supprimer" HorizontalAlignment="Left" Margin="209,152,0,0" VerticalAlignment="Top" Width="78" Background="#FFF39595" FontFamily="Comic Sans MS" FontSize="14" Click="delete_oeuvre_admin_btn_Click"/>
+        <TextBox x:Name="txt_id_oeuvre" HorizontalAlignment="Left" Height="23" Margin="308,141,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="66" Visibility="Hidden" />
+        <ComboBox x:Name="comboboxAddGroupe" HorizontalAlignment="Left" Margin="504,103,0,0" VerticalAlignment="Top" Width="245" IsTextSearchEnabled="True" Text="Sélectionner un groupe..."/>
+        <DataGrid x:Name="datagridOeuvreListe" HorizontalAlignment="Center" Height="149" Margin="0,246,0,0" VerticalAlignment="Top" Width="714" AutoGenerateColumns="False" CanUserAddRows="False" SelectionChanged="getDataFromRowDataGrid">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding Id}"  Width="65"/>
+                <DataGridTextColumn Header="Titre" Binding="{Binding Title}"  Width="410"/>
+                <DataGridTextColumn Header="Durée" Binding="{Binding Duration}" Width="125" />
+                <DataGridTextColumn Header="Id Groupe" Binding="{Binding IdGroupe}" Width="89" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Image Source="/logo_wave-removebg-preview.png" Margin="35,0,573,364"/>
+    </Grid>
+</UserControl>
